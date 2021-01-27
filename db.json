@@ -1,0 +1,9 @@
+{
+    "customers":[{  
+        "cardNumber":"1234567890123456",
+        "cardHolderName":"shanthi",
+        "cardExpiryDate":"12",
+        "cardCCV":"334",
+        "amount":"2000" 
+    }]
+}

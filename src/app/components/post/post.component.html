@@ -1,0 +1,24 @@
+<div *ngIf="formData">
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>CARD NUMBER</th>
+            <th>CARD NAME</th>
+            <th>EXPIRY Date</th>
+            <th>CCV</th>
+            <th>AMOUNT</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active-row" *ngFor="let customer of formData">
+            <td>{{customer.cardNumbers}}</td>
+            <td>{{customer.cardNames}}</td>
+            <td>{{customer.cardExpiry}}</td>
+            <td>{{customer.cardCcv}}</td>
+            <td>{{customer.cardAmount | currency:'USD':'symbol'}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+

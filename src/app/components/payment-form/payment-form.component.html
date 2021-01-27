@@ -1,0 +1,42 @@
+<form  [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+    <div class="form-box">
+        <div class="card-title">
+            <h5>CREDIT CARD PAYMENT</h5>
+            <img src="../../../assets/images/a2.jpeg" alt="atm" height="50px" width="80px"/>
+        </div>
+        <div class="card">
+            <label for="card-number">CARD NUMBER</label>
+            <br>
+            <input type="number" placeholder="**** **** **** ****" formControlName="cardNumbers" id="card-number"/>
+            <span class="errorMsg" *ngIf="paymentForm.controls['cardNumbers'].hasError('required')"><i class="fa fa-exclamation-circle" aria-hidden="true">Enter valid 16-digit card number!</i></span>
+        </div>
+        <div class="card">
+            <label for="card-holder-name">CARD HOLDER NAME</label>
+            <br>
+            <input type="text" placeholder="Example:shanthi" formControlName="cardNames" id="holder-name"/>
+        </div>
+        <div class="card">
+            <label for="card-expiry">CARD EXPIRY DATE</label>
+            <br>
+            <input type="month" placeholder="MM/YYYY" formControlName="cardExpiry" id="card-expiry"/>
+        </div>
+        <div class="card">
+            <label for="card-security-code">CARD CCV</label>
+            <br>
+            <input type="number" placeholder="***" formControlName="cardCcv" id="card-security-code"/>
+            <span class="errorMsg" *ngIf="paymentForm.controls['cardCcv'].hasError('required')"><i class="fa fa-exclamation-circle" aria-hidden="true">Enter the CCV number!</i></span>
+        </div>
+        <div class="card">
+            <label for="amounts">AMOUNT</label>
+            <br>
+            <input type="number" placeholder="$0000.00" formControlName="cardAmount" id="amounts"/>
+            <span class="errorMsg" *ngIf="paymentForm.controls['cardAmount'].hasError('required') || paymentForm.controls['cardAmount'].hasError('pattern')"><i class="fa fa-exclamation-circle" aria-hidden="true">  Enter the amount</i></span>
+        </div>
+        
+        <div class="card">
+            
+        <button type="submit" class="bttn" value="Submit" >Submit</button>
+    </div>
+    </div>
+    </form>
+    <app-post></app-post>
